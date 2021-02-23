@@ -1,4 +1,12 @@
 <p align="center"><img src="https://raw.githubusercontent.com/senselessdemon/reqr/master/logo.png" width="20%" height="20%"></p>
+<div align="center">
+	<a href="https://discord.io/demonden">
+		<img src="https://img.shields.io/badge/discord-server-blue.svg" alt="Discord" />
+	</a>
+	<a href="https://www.roblox.com/users/1811890178/profile">
+		<img src="https://img.shields.io/badge/roblox-profile-red.svg" alt="Discord" />
+	</a>
+</div>
 
 Reqr is a powerful module to ease the requiring/importing of scripts that are injected into the client. It is very lightweight and simple, and less than 100 lines. It all revolves around one function: `import`. This is the function used to import scripts. Reqr is open-source, and free for the anyone to use for their project. If you would like to contribute, you're very welcome to do so.
 ## Installation
