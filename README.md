@@ -1,4 +1,5 @@
-# Reqr
+<p align="center"><img src="https://raw.githubusercontent.com/senselessdemon/reqr/master/logo.png" width="20%" height="20%"></p>
+
 Reqr is a powerful module to ease the requiring/importing of scripts that are injected into the client. It is very lightweight and simple, and less than 100 lines. It all revolves around one function: `import`. This is the function used to import scripts. Reqr is open-source, and free for the anyone to use for their project. If you would like to contribute, you're very welcome to do so.
 ## Installation
 Reqr works by injecting a function called `import` into your environment. This function can be used to call other scripts, and is the only function. You only need to load reqr once. From that script, every imported script will also have an injected environment (meaning they can call the `import` function as well). If you do not feel comfortable loading a remote URL, you're more than welcome to clone it into your own repository. Reqr is proudly subject to the Unlisence, meaning you can do whatever you want with it without worring about copyright or anything like that.
