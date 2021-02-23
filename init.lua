@@ -47,7 +47,7 @@ end
 -- just basic import stuff
 function createEnv(base)
 	return {
-		env = function(...)
+		import = function(...)
 			return import(base, ...)
 		end,
 		__import = true,
