@@ -95,16 +95,22 @@ function parse(start, path)
 	return table.concat(parts, DESCEND_STR)
 end
 
+-- called upon importing a path
+-- determines what to do with it
+function handle(start, path)
+	return isUrl(path) and path or parse(start, path)
+end
+
 -- main importing function
 -- called by proxy function
 function import(start, path, ...)
-	local url = handlePath(path)
+	local url = handle(start, path)
 	
 	if url then
 		local buffer = getScript(url)
 	
 		if buffer then
-			local env = createEnv()
+			local env = createEnv(start)
 			return loadScript(buffer, env, ...)
 		end
 	end
