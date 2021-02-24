@@ -3,6 +3,11 @@ local BEGIN_STR = "."
 local ASCEND_STR = ".."
 local URL_STR = "http"
 
+-- global starting point
+-- also the default one
+-- use the . operator to import in refrence to location
+local globalStart = ""
+
 -- helper function to make an http request
 -- easy to run in a protected call (pcall)
 function httpGet(...)
@@ -66,7 +71,7 @@ end
 -- handles operators to ascend and descend
 function parse(start, path)
 	local parts = path:split(DESCEND_STR)
-	local pos = start
+	local pos = globalStart
 	local isFirst = true
 
 	local function descend(child)
@@ -119,6 +124,8 @@ end
 -- installation function
 -- injects import function to script's code
 function install(start)
+	globalStart = start
+
 	local fenv = getfenv(3)
 	local env = createEnv(start)
 
