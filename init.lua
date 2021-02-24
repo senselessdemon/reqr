@@ -71,22 +71,22 @@ end
 -- handles operators to ascend and descend
 function parse(start, path)
 	local parts = path:split(DESCEND_STR)
-	local pos = globalStart
+	local pos = globalStart:split(DESCEND_STR)
 	local isFirst = true
 
 	local function descend(child)
-		table.insert(parts)
+		table.insert(pos, child)
 	end
 
 	local function ascend()
-		table.remove(parts, #parts)
+		table.remove(pos, #pos)
 	end
 
 	for _, part in ipairs(parts) do
 		if isFirst then
 			isFirst = false
 			if part == BEGIN_STR or part == ASCEND_STR then
-				pos = start
+				pos = start:split(DESCEND_STR)
 			end
 		end
 
@@ -97,7 +97,7 @@ function parse(start, path)
 		end
 	end
 
-	return table.concat(parts, DESCEND_STR)
+	return table.concat(pos, DESCEND_STR)
 end
 
 -- called upon importing a path
